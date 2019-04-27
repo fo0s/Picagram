@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added gems
 gem 'pg'
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'font-awesome-rails'
