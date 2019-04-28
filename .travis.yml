@@ -11,7 +11,7 @@ addons:
 env:
   - DB=pgsql
 script:
-  - bundle exec rake db:migrate RAILS_ENV=development
+  - bundle exec rake db:migrate
 deploy:
   provider: heroku
   app: pic-a-gram
