@@ -1,7 +1,22 @@
 language: ruby
-rvm:
-- 2.2
-- jruby
+rvm: 2.5.0
+before_script:
+- bundle exec rake db:create
+- bundle exec rake assets:precompile
+before_install:
+- gem update --system
+- gem install bundler
+addons:
+  postgresql: 9.6
+env:
+  - DB=pgsql
+script:
+  - bundle exec rake db:migrate RAILS_ENV=development
 deploy:
+  provider: heroku
+  app: pic-a-gram
   api_key:
-    secure: G7sjUHBKZextqRIdrPcrbPB/apDdH+FKglGrWf0o8JlyaAjn+j6MumdCftoklfWmTXU9d22p3vyGIedNxSV94DonolCa+bUjBIRBLDL0hl3yajcXOzLq+HT0Nhn1dmrxxuuIMgk5swP/ogeQnrC8Al5oWL2Wi1gE+fnTqyJaQrle7YhilpZH/j1GOxsrglLsa0XWjN7T9xNHNT2puRe997X5Dgw2q1xFeFgW6QV9KGZGHcilfutX4g2qXwObUeQo6Q/wlRv/XgVS9nEByx74Xb77iQtEvhOi10PR70oqZu9C5ESd+HmqaxpVyeyaCx6cXdImka+M4X7fb+57Dh3MOwu1moNILAy2JrLvYHpPGompCUCtszbDiTAz3YQvfTO8Kvhdesf2wROQk2PzbyedKc9Oyac+bBPgy5ayRvavDCxV56xsb7m7XFx4evlS/D5fmxZvFgiyVd6NGC/6GsdrDqJboBnufA1vKRn5OLnygXDlGFPWFI5Riic8SKTmqmaZKUKlcSDAKrKQkMIq3aPlNrVO5tDNkm0lby6wEn/MDWD3Cwi9Q/+qZPxKtjO9TSyNPVg8fROLAoeYRc5pgO4s5s1e/+KiN1+Bys/uCXrdaZWT32QTuzi7COflxrYjTV8dBFJfasNGzWiOEYjbVYpWN7T+9sfJ6ZR1mD9qiJZ+5z0=
+    secure: IqGoXnE180aToUNSJQHRMkerMvFO8iV881UPIpnyUrjh60Nnx543vz1ko143GIDCEw78048xX+Jg12NTYqMFfPop8+wYyFkduGgxs7fGOK3oZQLm45Qaiq1rjAJL1DegX6zj+Ry9XQ7388kFw0MNmmK2DkOBLxO6dr5kEIoeIXj/ZFhbfcZEKRt42vRQJzMZ5A2U+vfdMSYjy1bFKFMgst0JWBY+I8u7CjK6ImPLM2aiRzTXJwPq4MCNg2Ukwxc2hKB9n/uKhCdqASnF0neTf5YLcva33wXypmegtb0douVtK5leHYtXvjUkYh64/TDXJ66rJIkBDS0hQEg8Eiv3MfXjoBdi/HL/f1VnPt6WLOMgU/gQy9fVqTr1sUpdQAwq1JIN3Ie5SP5XTZ78k5ez89QqCung76bHyC5WdEEuWdsRLSfOWV5lu1r29AtEBzrwLvFDAHIY85lPziRWXUQ331danlgsQiVYpBDhPOlvb1W+zcEobRBUL0M2Fk/uDNRSpMfnNuJKvaTLpTKpYXa28mNJpiy2S2l4j0asq0VaPxVedq1i8q/acUxqETjM3zBojU0ewRWM6shoFOEI0hhPQuZL7+pX34b4cgb+Tj9ZdQL7IsMyKlzQ2qa5Cnncndq4ayVSuPL4NO+LqXRxcNkSpo42K9QyWxhdA9kxvr1XDN4=
+    on:
+      repo: fo0s/Picagram
+      branch: master
