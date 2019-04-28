@@ -1,24 +1,6 @@
-# README
+# Picagram
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> An Instagram clone for the Makers week 8 weekend challenge
 
-Things you may want to cover:
+Live site can be found [here](https://pic-a-gram.herokuapp.com/)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
