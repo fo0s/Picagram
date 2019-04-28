@@ -9,14 +9,13 @@ before_install:
 addons:
   postgresql: 9.6
 env:
-  - DB=pgsql
+- DB=pgsql
 script:
-  - bundle exec rake db:migrate
+- bundle exec rake db:migrate
+matrix:
+  fast_finish: true
 deploy:
   provider: heroku
   app: pic-a-gram
   api_key:
-    secure: "dEY1q/WlcaEDEaYiWVmte2uA3rjujDciDcHYR+9N0bapanKd58oB8P5MnsJUx6lCbfqMw4W8Ttkps+g6EBODPDr/Rcd+swSt9s836qbhpxaShtHlG18PUkWjgeWN0Xfrh/y2rtOavpygWX1hfp/JHYP3dyESS5ot4nrK79GOoDmsXz+9n2YD/Keypahixg2v4ZghYXpa8kTPwJ7LVwSuDHgbEt2ETMg13Vnjfnl1L369WUNqCbn9VVCzTPBducnRLWdzU57BB0VnMcp+TH0TqapYwPMECWPHYVaoUf6LFn4xXHWAmB+sCwJb9s8U+7zxDbWG6QUqeAgbTw+snARMMD4gSItFIPeQVdN0UTMyL2Ifm/ObyGEIF9iKNcuMoN+gUKLoyBQzMNypNw7xMlT4dHoXU16hyiYgqLbxExIwcCrVnY4923OrNxIeHdS0drAA22R8PDryLh0IylQ2wkOWJ0eMh7Z6E23leTr57YntLtbRs9UYnWntxZLPjXzAdyllXnqUn0ZgGbE5coIzBRHw02gAaBAqYC9J/U39gfLhp+NTrRW7LRAqhHeTIrJMNjFDc1YLIrZ/FYbrSMvz+qp6DaiZ75yhZDQ+OAIFickPAtNswseGgZ10GD1PskYC5A94WpS6+5J5a3f6NWZuANMJzdVyMHXAjzbHqStX2CEXfNk="
-    on:
-      repo: fo0s/Picagram
-      branch: master
+    secure: qkrcsw1NkCdDgN+0O/2iYI6O2CT6jOj/OU0UTfy4H0hf99iKNoxqh2D33mkYTXoIGD0aOhrhJniS7ZvEiilcrAijhiI4IdlExC9gZd6LgJBF1qeV36HSYdxTaqNyJ7e0gx3QnW2L0l9gphNqWFQfyh691WzlBJ3OkqFsjD8ppTYH6wjnVwQgKgW1ld/G3Ve2Idp5hX+rQELfwSDFs/35nMWh/2RUv8cMLIbsXfbby6q8Y/FSYBaaFPmd+7do1HsjLDefjdPxL9G9Xj9XbtaDDuTxIW4PYjQxLQ1j43p3IP83T+EXILXXdq3S1lAspnExO854/KmMa3hEoB/MsQ8NszIhAdx0pSVR8owp/aY62xPkmLLkS44ckKq/AMo5lk2MdkTJ8fo+ydJyfvJZ9cR1kjOm9qDwUC9VXP1vhufPN3gFqQvbwHwTBaedMLYh84l9t+xZTUbQKPbsQMioFq3JB8f9v0qM4z7bCd7b0oi1A9+NDvODR6AOgvSPjyZbYxs0MZN7yNEz2ANhhqcr1k3D5Wmor5tTmkpTNRB5Y8AfUA8mmSDBC6V872Kd0EwJ3l+HSEGuLzN84FT5CXTDg42wbkQdqbzBo5dkISctxXeoGK4QSJD33UzJrwujlBIgLipJT64XKVq7iDcPFk+G6btytYAazC4ZBzQcIMwMAVaBWb0=
